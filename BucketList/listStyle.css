@@ -1,0 +1,32 @@
+h1 {
+  border: 2px solid black;
+  margin-bottom: 10px;
+  padding: 10px 15px 10px 15px;
+  font-size: 1.2em;
+  border-width: 9px;
+  border-style: solid;
+  border-color: cyan magenta yellow black;
+}
+
+ div.bounce {
+  width: 150px;
+  padding: 20px;
+  background: cyan;
+  position: relative;
+  animation: bounce 2s ease-in 2s 6 alternate none;
+  border: 2px solid magenta;
+}
+
+@keyframes bounce {
+	from {
+	  top: 0px;
+	  left: 0px;
+	  }
+	to {
+	  top: 150px;
+	  left: 150px;
+	}
+}
+body {
+  border: 2px solid black;
+}
