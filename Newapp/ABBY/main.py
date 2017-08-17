@@ -18,6 +18,17 @@ class MainHandler(webapp2.RequestHandler):
         #gif_url = parsed_giphy_dictionary[0]
         self.response.write(parsed_giphy_dictionary)
 
+class friendsHandler(webapp2.RequestHandler):
+    def get(self):
+        main_template = env.get_template('Friends.html')
+        self.response.out.write(main_template.render())
+class discoverHandler(webapp2.RequestHandler):
+    def get(self):
+        main_template = env.get_template('Discover.html')
+        self.response.out.write(main_template.render())
+
+
+
 class latlongHandler(webapp2.RequestHandler):
     def get(self):
         main_template = env.get_template('address.html')
@@ -78,8 +89,10 @@ class GipHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler),
+    ('/foo', MainHandler),
     ('/gip', GipHandler),
-    ('/lat', latlongHandler),
-    ('/map', MapHandler)
+    ('/', latlongHandler),
+    ('/friends', friendsHandler),
+    ('/map', MapHandler),
+    ('/discover',discoverHandler),
 ], debug=True)
